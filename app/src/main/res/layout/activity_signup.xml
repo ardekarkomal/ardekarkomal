@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/layout_toolbar" />
+
+    <ScrollView style="@style/ScrollView">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView style="@style/Card">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_12sdp"
+                    android:paddingTop="@dimen/_18sdp"
+                    android:paddingEnd="@dimen/_12sdp">
+
+                    <TextView
+                        android:id="@+id/tv_signUpMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/text_light"
+                        android:textSize="@dimen/_12sdp"
+                        android:text="@string/it_only_takes_a_minute_to_start_taking_your_first_order" />
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_firstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_signUpMessage"
+                        android:layout_marginTop="@dimen/_24sdp"
+                        app:boxBackgroundColor="@color/screen_bg"
+                        app:hintEnabled="false"
+                        app:hintTextAppearance="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/et_firstName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ."
+                            android:hint="@string/full_name"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textCapWords"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:paddingTop="@dimen/_6sdp"
+                            android:paddingBottom="@dimen/_6sdp"
+                            android:singleLine="true"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="LabelFor"
+                            tools:text="Marysa Labrone" />
+
+                        <View
+                            android:id="@+id/view_firstNameBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/line_color" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/til_firstName"
+                        android:paddingTop="@dimen/_14sdp"
+                        app:boxBackgroundColor="@color/screen_bg"
+                        app:hintEnabled="false"
+                        app:hintTextAppearance="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/et_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:imeOptions="actionNext"
+                            android:importantForAutofill="no"
+                            android:inputType="textEmailAddress"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:hint="@string/email_address"
+                            android:paddingTop="@dimen/_6sdp"
+                            android:paddingBottom="@dimen/_6sdp"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="LabelFor"
+                            tools:text="marysalabrone@gmail.com" />
+
+                        <View
+                            android:id="@+id/view_emailBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/line_color" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_country_code"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/til_email"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom">
+
+                            <EditText
+                                android:id="@+id/et_countryCode"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:cursorVisible="false"
+                                android:focusable="false"
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:paddingStart="0dp"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingEnd="@dimen/_4sdp"
+                                android:paddingBottom="@dimen/_6sdp"
+                                android:textColor="@color/text_dark"
+                                android:textSize="@dimen/_12sdp"
+                                tools:ignore="LabelFor"
+                                android:text="@string/_91"
+                                android:paddingLeft="0dp"
+                                android:paddingRight="@dimen/_4sdp" />
+
+                            <ImageView
+                                android:layout_width="@dimen/_15sdp"
+                                android:layout_height="@dimen/_15sdp"
+                                android:layout_centerVertical="true"
+                                android:layout_toEndOf="@id/et_countryCode"
+                                android:contentDescription="@string/img_desc"
+                                android:paddingTop="@dimen/_2sdp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/ic_arrow_drop_down_black"
+                                android:layout_toRightOf="@id/et_countryCode" />
+
+                        </RelativeLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_mobile_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/_14sdp"
+                            app:hintEnabled="false"
+                            app:boxBackgroundColor="@color/screen_bg"
+                            app:hintTextAppearance="@style/TextLabel">
+
+                            <EditText
+                                android:id="@+id/et_mobileNumber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:imeOptions="actionNext"
+                                android:importantForAutofill="no"
+                                android:inputType="number"
+                                android:maxLength="10"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/_8sdp"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingEnd="0dp"
+                                android:paddingBottom="@dimen/_6sdp"
+                                android:textColor="@color/text_dark"
+                                android:textSize="@dimen/_12sdp"
+                                android:hint="@string/mobile_number"
+                                tools:ignore="LabelFor"
+                                tools:text="345 678 9012"
+                                android:paddingLeft="@dimen/_8sdp"
+                                android:paddingRight="0dp" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/view_mobileNumberBackground"
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_below="@id/ll_country_code"
+                        android:background="@color/line_color" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/_14sdp"
+                            app:hintEnabled="false"
+                            app:passwordToggleEnabled="true"
+                            app:boxBackgroundColor="@color/screen_bg"
+                            app:hintTextAppearance="@style/TextLabel"
+                            android:layout_below="@id/view_mobileNumberBackground">
+
+                            <EditText
+                                android:id="@+id/et_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+                                android:hint="@string/password"
+                                android:imeOptions="actionDone"
+                                android:importantForAutofill="no"
+                                android:inputType="textWebPassword"
+                                android:maxLength="16"
+                                android:maxLines="1"
+                                android:paddingStart="@dimen/_8sdp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="@dimen/_6sdp"
+                                android:paddingEnd="@dimen/_30sdp"
+                                android:paddingRight="@dimen/_30sdp"
+                                android:paddingBottom="@dimen/_6sdp"
+                                android:textColor="@color/text_dark"
+                                android:textSize="@dimen/_12sdp"
+                                tools:ignore="LabelFor"
+                                tools:text="12345678" />
+
+                            <View
+                                android:id="@+id/view_passwordBackground"
+                                android:layout_width="match_parent"
+                                android:layout_height="0.5dp"
+                                android:background="@color/line_color" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_cnf_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/_14sdp"
+                        app:hintEnabled="false"
+                        app:passwordToggleEnabled="true"
+                        app:boxBackgroundColor="@color/screen_bg"
+                        app:hintTextAppearance="@style/TextLabel"
+                        android:layout_below="@id/til_password">
+
+                        <EditText
+                            android:id="@+id/et_cnf_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@null"
+                            android:hint="@string/cnf_password"
+                            android:imeOptions="actionDone"
+                            android:importantForAutofill="no"
+                            android:inputType="textWebPassword"
+                            android:maxLength="16"
+                            android:maxLines="1"
+                            android:paddingStart="@dimen/_8sdp"
+                            android:paddingLeft="0dp"
+                            android:paddingTop="@dimen/_6sdp"
+                            android:paddingEnd="@dimen/_30sdp"
+                            android:paddingRight="@dimen/_30sdp"
+                            android:paddingBottom="@dimen/_6sdp"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/_12sdp"
+                            tools:ignore="LabelFor"
+                            tools:text="12345678" />
+
+                        <View
+                            android:id="@+id/view_cnf_passwordBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="0.5dp"
+                            android:background="@color/line_color" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <RelativeLayout
+                        android:id="@+id/rl_signUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/til_cnf_password"
+                        android:layout_marginTop="@dimen/_14sdp">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/btn_sign_up"
+                            style="@style/Button"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="0dp"
+                            android:text="CREATE ACCOUNT" />
+
+                       <!-- <com.airbnb.lottie.LottieAnimationView
+                            android:id="@+id/btnLoader"
+                            android:layout_width="@dimen/_35sdp"
+                            android:layout_height="@dimen/_35sdp"
+                            android:layout_centerHorizontal="true"
+                            android:visibility="gone"
+                            app:lottie_autoPlay="true"
+                            app:lottie_fileName="loader.json"
+                            app:lottie_loop="true" />-->
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llSignIn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rl_signUp"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_12sdp"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/tv_account"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/_2sdp"
+                            android:maxLines="1"
+                            android:textColor="@color/text_dark"
+                            android:textSize="@dimen/_11sdp"
+                            android:text="@string/already_have_a_account"
+                            android:layout_marginRight="@dimen/_2sdp" />
+
+                        <TextView
+                            android:id="@+id/tv_signIn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:maxLines="1"
+                            android:padding="@dimen/_2sdp"
+                            android:textColor="@color/selector_text_accent"
+                            android:textSize="@dimen/_11sdp"
+                            android:text="@string/sign_in" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+</layout>
