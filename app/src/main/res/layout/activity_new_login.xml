@@ -238,7 +238,7 @@
                             android:padding="@dimen/_2sdp"
                             android:textColor="@color/selector_text_accent"
                             android:textSize="@dimen/_11sdp"
-                            android:text="@string/get_started" />
+                            android:text="@string/signUp" />
 
                     </LinearLayout>
 

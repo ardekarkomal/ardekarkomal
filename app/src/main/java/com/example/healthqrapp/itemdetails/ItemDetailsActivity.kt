@@ -7,6 +7,7 @@ import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityItemDetailsBinding
 import com.example.healthqrapp.login.LoginActivity
+import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 
 class ItemDetailsActivity : BaseActivity() {
@@ -47,19 +48,36 @@ class ItemDetailsActivity : BaseActivity() {
             val i = Intent(this,DashbordActivity::class.java)
             startActivity(i)
         }
+
+        itemDetailsDataBinding.toolbar.tvMyAddress.setOnClickListener {
+            val i = Intent(this, MyOrderActivity::class.java)
+            startActivity(i)
+        }
+
         itemDetailsDataBinding.cvGoBack.setOnClickListener {
             onBackPressed()
         }
     }
 
     private fun setData(){
-        itemDetailsDataBinding.tvOrderId.text = intent.getStringExtra(ORDER_ID)
-        itemDetailsDataBinding.tvCreateDate.text = intent.getStringExtra(CREATED_DATE)
-        itemDetailsDataBinding.tvTotal.text =intent.getStringExtra(TOTAL_AMOUNT)
-        itemDetailsDataBinding.tvTitle.text = intent.getStringExtra(TITLE)
-        itemDetailsDataBinding.tvDesc.text = intent.getStringExtra(DESCRIPTION)
-        itemDetailsDataBinding.tvUnitPrice.text = intent.getStringExtra(UNIT_PRICE)
-        itemDetailsDataBinding.tvQuantity.text = intent.getStringExtra(QUANTITY)
-        itemDetailsDataBinding.tvTotalAmount.text = intent.getStringExtra(TOTAL_AMOUNT)
+        if(FROM=="Receipt") {
+            itemDetailsDataBinding.tvOrderId.text = intent.getStringExtra(ORDER_ID)
+            itemDetailsDataBinding.tvCreateDate.text = intent.getStringExtra(CREATED_DATE)
+            itemDetailsDataBinding.tvTotal.text = intent.getStringExtra(TOTAL_AMOUNT)
+            itemDetailsDataBinding.tvTitle.text = intent.getStringExtra(TITLE)
+            itemDetailsDataBinding.tvDesc.text = intent.getStringExtra(DESCRIPTION)
+            itemDetailsDataBinding.tvUnitPrice.text = intent.getStringExtra(UNIT_PRICE)
+            itemDetailsDataBinding.tvQuantity.text = intent.getStringExtra(QUANTITY)
+            itemDetailsDataBinding.tvTotalAmount.text = intent.getStringExtra(TOTAL_AMOUNT)
+        }else{
+            itemDetailsDataBinding.tvOrderId.text = "Order_23566"
+            itemDetailsDataBinding.tvCreateDate.text = "11-2-2021 11:02:03"
+            itemDetailsDataBinding.tvTotal.text ="1050"
+            itemDetailsDataBinding.tvTitle.text = "Life-Insurance"
+            itemDetailsDataBinding.tvDesc.text = "Life-Insurance individual policy"
+            itemDetailsDataBinding.tvUnitPrice.text = "1000"
+            itemDetailsDataBinding.tvQuantity.text = "1"
+            itemDetailsDataBinding.tvTotalAmount.text = "1050"
+        }
     }
 }

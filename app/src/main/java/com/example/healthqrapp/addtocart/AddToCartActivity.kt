@@ -15,6 +15,7 @@ import com.example.healthqrapp.databinding.ActivityAddToCartBinding
 import com.example.healthqrapp.insurancedetails.InsuranceDetailsActivity
 import com.example.healthqrapp.itemdetails.ItemDetailsActivity
 import com.example.healthqrapp.login.LoginActivity
+import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.receipt.ReceiptActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
@@ -55,6 +56,11 @@ class AddToCartActivity: BaseActivity() {
 
         addToCartBinding.toolbar.tvHome.setOnClickListener {
             val i = Intent(this, DashbordActivity::class.java)
+            startActivity(i)
+        }
+
+        addToCartBinding.toolbar.tvMyAddress.setOnClickListener {
+            val i = Intent(this, MyOrderActivity::class.java)
             startActivity(i)
         }
 

@@ -9,6 +9,7 @@ import com.example.healthqrapp.base.showMessage
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityCheckoutBinding
 import com.example.healthqrapp.login.LoginActivity
+import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
 
@@ -38,6 +39,12 @@ class CheckoutActivity : BaseActivity() {
             val i = Intent(this, DashbordActivity::class.java)
             startActivity(i)
         }
+
+        checkoutDataBinding.toolbar.tvMyAddress.setOnClickListener {
+            val i = Intent(this, MyOrderActivity::class.java)
+            startActivity(i)
+        }
+
         checkoutDataBinding.btnProceed.setOnClickListener {
           if(validation()) {
               val i = Intent(this, AddToCartActivity::class.java)

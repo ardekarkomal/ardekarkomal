@@ -53,5 +53,10 @@ dependencies {
     //gson
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //otp
+    implementation 'com.github.aabhasr1:OtpView:v1.1.2'
+
+
+
 
 }

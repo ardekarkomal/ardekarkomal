@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthqrapp.R
+import com.example.healthqrapp.addtocart.AddToCartActivity
 import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityMyOrderBinding
@@ -18,6 +19,7 @@ import com.example.healthqrapp.utils.Constant
 class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
 
     companion object{
+        const val FROM="from"
         const val TOTAL_AMOUNT="total amount"
         const val ITEM_IMAGE="item image"
         const val TITLE="title"
@@ -49,6 +51,11 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
             startActivity(i)
         }
 
+        myOrderBinding.toolbar.tvMyAddress.setOnClickListener {
+            myOrderList.clear()
+            init()
+        }
+
         myOrderBinding.toolbar.tvHome.setOnClickListener {
             val i = Intent(this, DashbordActivity::class.java)
             startActivity(i)
@@ -77,6 +84,7 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
         when(where){
             EnumClicks.CELL_MY_ORDER_CLICK ->{
                 val i = Intent(this,ItemDetailsActivity::class.java)
+                i.putExtra(ItemDetailsActivity.FROM, intent.getStringExtra(FROM))
                 i.putExtra(ItemDetailsActivity.TITLE,intent.getStringExtra(TITLE))
                 i.putExtra(ItemDetailsActivity.DESCRIPTION,intent.getStringExtra(DESCRIPTION))
                 i.putExtra(ItemDetailsActivity.ITEM_IMAGE,intent.getStringExtra(ITEM_IMAGE))

@@ -12,6 +12,8 @@ import com.example.healthqrapp.interfaces.EnumClicks
 import com.example.healthqrapp.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.DashbordModel
+import com.example.healthqrapp.model.MyOrderModel
+import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
 
@@ -44,11 +46,16 @@ class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
             mDashBordList.clear()
             init()
         }
+
+        dashboardDataBinding.toolbar.tvMyAddress.setOnClickListener {
+            val i = Intent(this, MyOrderActivity::class.java)
+            startActivity(i)
+        }
     }
 
     private fun setList(){
       mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))
-      mDashBordList.add(DashbordModel(R.drawable.insurance3,"Finance"))
+      mDashBordList.add(DashbordModel(R.drawable.insurance3,"Insurance"))
       mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))
       mDashBordList.add(DashbordModel(R.drawable.insurance1,"Insurance"))
       mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))

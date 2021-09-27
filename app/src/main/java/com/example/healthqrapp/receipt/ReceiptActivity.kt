@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
 import com.example.healthqrapp.base.BaseActivity
+import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityReceiptBinding
 import com.example.healthqrapp.itemdetails.ItemDetailsActivity
+import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.myorder.MyOrderActivity
+import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
 
 class ReceiptActivity :BaseActivity(){
@@ -37,6 +40,7 @@ class ReceiptActivity :BaseActivity(){
     override fun setClickListener(){
        receiptDataBinding.btnOrderDetail.setOnClickListener {
            val i= Intent(this,MyOrderActivity::class.java)
+           i.putExtra(MyOrderActivity.FROM,"Receipt")
            i.putExtra(MyOrderActivity.TITLE,intent.getStringExtra(TITLE))
            i.putExtra(MyOrderActivity.DESCRIPTION,intent.getStringExtra(DESCRIPTION))
            i.putExtra(MyOrderActivity.QUANTITY,intent.getStringExtra(QUANTITY))
@@ -45,5 +49,24 @@ class ReceiptActivity :BaseActivity(){
            i.putExtra(MyOrderActivity.UNIT_PRICE,"1000")
            startActivity(i)
        }
+        receiptDataBinding.toolbar.tvSignup.setOnClickListener {
+            val i = Intent(this, SignUPActivity::class.java)
+            startActivity(i)
+        }
+
+        receiptDataBinding.toolbar.tvLogin.setOnClickListener {
+            val i = Intent(this, LoginActivity::class.java)
+            startActivity(i)
+        }
+
+        receiptDataBinding.toolbar.tvHome.setOnClickListener {
+            val i = Intent(this, DashbordActivity::class.java)
+            startActivity(i)
+        }
+
+        receiptDataBinding.toolbar.tvMyAddress.setOnClickListener {
+            val i = Intent(this, MyOrderActivity::class.java)
+            startActivity(i)
+        }
     }
 }

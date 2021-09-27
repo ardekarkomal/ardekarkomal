@@ -1,9 +1,11 @@
 package com.example.healthqrapp.forgetpasswrd
 
 import android.content.Intent
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
 import com.example.healthqrapp.base.BaseActivity
+import com.example.healthqrapp.base.showMessage
 import com.example.healthqrapp.databinding.ActivityForgetPasswordBinding
 
 class ForgetPasswordActivity : BaseActivity() {
@@ -20,6 +22,26 @@ class ForgetPasswordActivity : BaseActivity() {
     override fun setClickListener() {
       forgetPasswordBinding.toolbar.llBack.setOnClickListener {
          finish()
+      }
+        forgetPasswordBinding.tilEmail.visibility = View.VISIBLE
+        forgetPasswordBinding.otpView.visibility = View.GONE
+
+      forgetPasswordBinding.btnResetPassword.setOnClickListener {
+          if(forgetPasswordBinding.etEmail.text.toString() !=""){
+              forgetPasswordBinding.btnResetPassword.text = getString(R.string.reset_password)
+              if(forgetPasswordBinding.btnResetPassword.text ==getString(R.string.reset_password)){
+                  forgetPasswordBinding.tilEmail.visibility = View.GONE
+                  forgetPasswordBinding.otpView.visibility = View.VISIBLE
+                  if(forgetPasswordBinding.otpView.otp !=""){
+                      showMessage(this,"Password reset successfully!!")
+                      finish()
+                  }else{
+                      showMessage(this,"Please enter otp.")
+                  }
+              }
+          }else{
+              showMessage(this,"Please enter Email.")
+          }
       }
     }
 }

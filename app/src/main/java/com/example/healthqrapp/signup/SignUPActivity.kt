@@ -41,9 +41,6 @@ class SignUPActivity :BaseActivity(){
               startActivity(i)
           }
       }
-     /* signUPDataBinding.rgLoginType.setOnCheckedChangeListener(){
-          Constant.SELECTED_LOGIN_TYPE =  signUPDataBinding.rgLoginType.checkedRadioButtonId.toString()
-      }*/
     }
 
     private fun validation():Boolean{
@@ -64,9 +61,6 @@ class SignUPActivity :BaseActivity(){
             return false
         }else if(signUPDataBinding.etPassword.text.toString() != signUPDataBinding.etCnfPassword.text.toString()){
             showMessage(this,"Password and Confirm Password should be same.")
-            return false
-        }else if(signUPDataBinding.rgLoginType.checkedRadioButtonId ==-1){
-            showMessage(this,"Please select login type.")
             return false
         }else{
             return true
