@@ -7,6 +7,7 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/_5sdp">
     <LinearLayout
+        android:id="@+id/ll_RootView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -70,7 +71,6 @@
             android:text="@string/createdate"
             android:textColor="@color/black"
             android:textSize="@dimen/_8sdp"
-            android:gravity="center_horizontal"
             android:layout_weight="1"/>
         <TextView
             android:id="@+id/tv_locality"

@@ -7,9 +7,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthqrapp.R
 import com.example.healthqrapp.databinding.RowMyOrderBinding
+import com.example.healthqrapp.interfaces.EnumClicks
+import com.example.healthqrapp.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.model.MyOrderModel
 
-class MyOrderAdapter(var mList: ArrayList<MyOrderModel>) :
+class MyOrderAdapter(var mList: ArrayList<MyOrderModel>,var onClickListener:OnRecyclerClickListener) :
     RecyclerView.Adapter<MyOrderAdapter.ViewHolder>() {
 
     private lateinit var mContext: Context
@@ -32,6 +34,10 @@ class MyOrderAdapter(var mList: ArrayList<MyOrderModel>) :
         binding.tvCreateDate.text = mList[position].createDate
         binding.tvLocality.text = mList[position].locality
         binding.tvPhoneNumber.text = mList[position].phoneNumber
+
+        binding.llRootView.setOnClickListener {
+            onClickListener.onRecyclerClick(EnumClicks.CELL_MY_ORDER_CLICK,position)
+        }
 
     }
 

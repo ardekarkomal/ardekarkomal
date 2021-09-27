@@ -10,7 +10,10 @@ import com.example.healthqrapp.databinding.ActivityDashbordBinding
 import com.example.healthqrapp.insurancedetails.InsuranceDetailsActivity
 import com.example.healthqrapp.interfaces.EnumClicks
 import com.example.healthqrapp.interfaces.OnRecyclerClickListener
+import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.DashbordModel
+import com.example.healthqrapp.signup.base.SignUPActivity
+import com.example.healthqrapp.utils.Constant
 
 class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
 
@@ -27,13 +30,27 @@ class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
     }
 
     override fun setClickListener(){
+        dashboardDataBinding.toolbar.tvSignup.setOnClickListener {
+            val i = Intent(this, SignUPActivity::class.java)
+            startActivity(i)
+        }
+
+        dashboardDataBinding.toolbar.tvLogin.setOnClickListener {
+            val i = Intent(this, LoginActivity::class.java)
+            startActivity(i)
+        }
+
+        dashboardDataBinding.toolbar.tvHome.setOnClickListener {
+            mDashBordList.clear()
+            init()
+        }
     }
 
     private fun setList(){
       mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))
-      mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Finance"))
+      mDashBordList.add(DashbordModel(R.drawable.insurance3,"Finance"))
       mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))
-      mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))
+      mDashBordList.add(DashbordModel(R.drawable.insurance1,"Insurance"))
       mDashBordList.add(DashbordModel(R.drawable.ic_sign_in,"Insurance"))
     }
 
@@ -46,8 +63,8 @@ class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
     override fun onRecyclerClick(where: EnumClicks, position: Int) {
         when(where){
          EnumClicks.CELL_CLICK->{
-               dashboardDataBinding.toolbar.tvItemCount.text ="1"
-               dashboardDataBinding.toolbar.tvItemCount.visibility = View.VISIBLE
+               Constant.SELECTED_ITEM_COUNT = (Constant.SELECTED_ITEM_COUNT.toInt() + 1).toString()
+               dashboardDataBinding.toolbar.tvItemCount.text =Constant.SELECTED_ITEM_COUNT
                val i = Intent(this,InsuranceDetailsActivity::class.java)
                startActivity(i)
          }

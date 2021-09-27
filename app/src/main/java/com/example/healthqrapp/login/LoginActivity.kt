@@ -51,8 +51,8 @@ class LoginActivity : BaseActivity() {
         }
 
         loginDataBinding.ivGoogle.setOnClickListener {
-            val i= Intent(this,MyOrderActivity::class.java)
-            startActivity(i)
+          //  val i= Intent(this,MyOrderActivity::class.java)
+          //  startActivity(i)
         }
     }
 
@@ -66,5 +66,10 @@ class LoginActivity : BaseActivity() {
         } else {
             true
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finishAffinity()
     }
 }

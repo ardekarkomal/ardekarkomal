@@ -6,7 +6,11 @@ import com.example.healthqrapp.R
 import com.example.healthqrapp.addtocart.AddToCartActivity
 import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityCheckoutBinding
+import com.example.healthqrapp.login.LoginActivity
+import com.example.healthqrapp.signup.base.SignUPActivity
+import com.example.healthqrapp.utils.Constant
 
 class CheckoutActivity : BaseActivity() {
 
@@ -16,10 +20,25 @@ class CheckoutActivity : BaseActivity() {
 
     override fun init(){
         checkoutDataBinding = DataBindingUtil.setContentView(this,getLayout())
+        checkoutDataBinding.toolbar.tvItemCount.text = Constant.SELECTED_ITEM_COUNT
     }
 
     override fun setClickListener() {
-      checkoutDataBinding.btnProceed.setOnClickListener {
+        checkoutDataBinding.toolbar.tvSignup.setOnClickListener {
+            val i = Intent(this, SignUPActivity::class.java)
+            startActivity(i)
+        }
+
+        checkoutDataBinding.toolbar.tvLogin.setOnClickListener {
+            val i = Intent(this, LoginActivity::class.java)
+            startActivity(i)
+        }
+
+        checkoutDataBinding.toolbar.tvHome.setOnClickListener {
+            val i = Intent(this, DashbordActivity::class.java)
+            startActivity(i)
+        }
+        checkoutDataBinding.btnProceed.setOnClickListener {
           if(validation()) {
               val i = Intent(this, AddToCartActivity::class.java)
               i.putExtra(AddToCartActivity.FROM, "CheckoutActivity")

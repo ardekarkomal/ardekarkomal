@@ -19,6 +19,7 @@ class InsuranceDetailsActivity: BaseActivity(),OnRecyclerClickListener {
         var SIZE = "size"
         var PRICE="price"
         var IMAGE="image"
+        var DESCRIPTION="description"
     }
 
     private lateinit var insuranceDetailsBinding: ActivityInsuranceDetailsBinding
@@ -60,8 +61,8 @@ class InsuranceDetailsActivity: BaseActivity(),OnRecyclerClickListener {
 
     override fun onRecyclerClick(where: EnumClicks, position: Int) {
       when(where){
-          EnumClicks.ADD_TO_CART_CLICK ->{
-               val i= Intent(this,AddToCartActivity::class.java)
+          EnumClicks.CELL_ADD_TO_CART_CLICK ->{
+              val i= Intent(this,AddToCartActivity::class.java)
               /* i.putExtra(AddToCartActivity.TITLE,mInsurancelist[position].title)
                i.putExtra(AddToCartActivity.SIZE,mInsurancelist[position].size)
                i.putExtra(AddToCartActivity.PRICE,mInsurancelist[position].amount)
@@ -73,6 +74,7 @@ class InsuranceDetailsActivity: BaseActivity(),OnRecyclerClickListener {
               SIZE = mInsurancelist[position].size
               IMAGE= mInsurancelist[position].image.toString()
               PRICE= mInsurancelist[position].amount
+              DESCRIPTION = mInsurancelist[position].description
 
           }
           else ->{}

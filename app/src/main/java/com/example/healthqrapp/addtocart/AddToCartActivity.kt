@@ -3,26 +3,29 @@ package com.example.healthqrapp.addtocart
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
 import com.example.healthqrapp.base.BaseActivity
+import com.example.healthqrapp.base.showMessage
 import com.example.healthqrapp.checkout.CheckoutActivity
+import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityAddToCartBinding
 import com.example.healthqrapp.insurancedetails.InsuranceDetailsActivity
 import com.example.healthqrapp.itemdetails.ItemDetailsActivity
+import com.example.healthqrapp.login.LoginActivity
+import com.example.healthqrapp.receipt.ReceiptActivity
+import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
 import com.example.healthqrapp.utils.Utility
 
 class AddToCartActivity: BaseActivity() {
 
     companion object{
-        const val TITLE="title"
         const val SIZE = "size"
-        const val PRICE="price"
-        const val IMAGE="image"
         const val FROM="from"
     }
-
     private lateinit var addToCartBinding: ActivityAddToCartBinding
     private var totalItem=""
     private var unitPrice=""
@@ -33,18 +36,43 @@ class AddToCartActivity: BaseActivity() {
 
     override fun init() {
      addToCartBinding = DataBindingUtil.setContentView(this,getLayout())
+     addToCartBinding.toolbar.tvItemCount.text =Constant.SELECTED_ITEM_COUNT
      setData()
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     @SuppressLint("SetTextI18n")
     override fun setClickListener() {
+        addToCartBinding.toolbar.tvSignup.setOnClickListener {
+            val i = Intent(this, SignUPActivity::class.java)
+            startActivity(i)
+        }
+
+        addToCartBinding.toolbar.tvLogin.setOnClickListener {
+            val i = Intent(this, LoginActivity::class.java)
+            startActivity(i)
+        }
+
+        addToCartBinding.toolbar.tvHome.setOnClickListener {
+            val i = Intent(this, DashbordActivity::class.java)
+            startActivity(i)
+        }
+
         addToCartBinding.btnCheckout.setOnClickListener {
             if(addToCartBinding.btnCheckout.text.toString() == getString(R.string.checkout)) {
                 val i = Intent(this, CheckoutActivity::class.java)
                 startActivity(i)
             }else{
-                val i = Intent(this, ItemDetailsActivity::class.java)
+                showMessage(this,"Payment Done Successfully!!")
+                val i = Intent(this, ReceiptActivity::class.java)
+                i.putExtra(ReceiptActivity.TITLE,InsuranceDetailsActivity.TITLE)
+                i.putExtra(ReceiptActivity.DESCRIPTION,InsuranceDetailsActivity.DESCRIPTION)
+                i.putExtra(ReceiptActivity.UNIT_PRICE,unitPrice)
+                i.putExtra(ReceiptActivity.TOTAL_AMOUNT,totalItemAmount)
+                i.putExtra(ReceiptActivity.QUANTITY,totalItem)
+                i.putExtra(ReceiptActivity.ITEM_IMAGE,InsuranceDetailsActivity.IMAGE)
                 startActivity(i)
+
             }
         }
 
@@ -62,6 +90,7 @@ class AddToCartActivity: BaseActivity() {
                         addToCartBinding.tvTotalItemAmount.text = (unitPrice.toInt() + tax.toInt()).toString()
                         addToCartBinding.tvTotalPrice.text = unitPrice
                     } else {
+                        totalItemAmount =(totalItemAmount.toInt() + unitPrice.toInt() + tax.toInt()).toString()
                         addToCartBinding.tvTotalItemAmount.text =
                             (totalItemAmount.toInt() + unitPrice.toInt() + tax.toInt()).toString()
                         addToCartBinding.tvTotalPrice.text =
@@ -86,6 +115,7 @@ class AddToCartActivity: BaseActivity() {
                 addToCartBinding.tvTotalItemAmount.text = (unitPrice.toInt() + tax.toInt()).toString()
                 addToCartBinding.tvTotalPrice.text = unitPrice
             }else{
+                totalItemAmount =(totalItemAmount.toInt() + unitPrice.toInt() + tax.toInt()).toString()
                 addToCartBinding.tvTotalItemAmount.text = (totalItemAmount.toInt() + unitPrice.toInt() + tax.toInt()).toString()
                 addToCartBinding.tvTotalPrice.text = (totalItemAmount.toInt() + unitPrice.toInt() + tax.toInt()).toString()
             }

@@ -5,6 +5,9 @@ import com.google.gson.Gson
 
 object Constant {
 
+     var SELECTED_ITEM_COUNT="0"
+     var SELECTED_LOGIN_TYPE = ""
+
     /*Shared Preferences Keys*/
     const val PREF_ADDTOCART_DATA = "UserData"
     var CART_TITLE="CartTitle"

@@ -1,8 +1,10 @@
 package com.example.healthqrapp.insurancedetails
 
 import android.content.Context
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthqrapp.R
@@ -10,6 +12,7 @@ import com.example.healthqrapp.databinding.RowInsuranceDetailsBinding
 import com.example.healthqrapp.interfaces.EnumClicks
 import com.example.healthqrapp.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.model.InsuranceDetailsModel
+import java.text.FieldPosition
 
 class InsuranceDetailsAdapter(var mList:ArrayList<InsuranceDetailsModel>,var onclickListener:OnRecyclerClickListener) :RecyclerView.Adapter<InsuranceDetailsAdapter.ViewHolder>(){
 
@@ -23,6 +26,7 @@ class InsuranceDetailsAdapter(var mList:ArrayList<InsuranceDetailsModel>,var onc
         return ViewHolder(binding)
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        binding.tvTitle.text = mList[position].title
        binding.tvDesc.text = mList[position].description
@@ -34,7 +38,12 @@ class InsuranceDetailsAdapter(var mList:ArrayList<InsuranceDetailsModel>,var onc
            onclickListener.onRecyclerClick(EnumClicks.CELL_CLICK,position)
        }
        binding.cvAddToCard.setOnClickListener {
-            onclickListener.onRecyclerClick(EnumClicks.ADD_TO_CART_CLICK,position)
+              if (position!=-1) {
+                   binding.cvAddToCard.setCardBackgroundColor(mContext.getColor(R.color.colorPrimary))
+               } else {
+                   binding.cvAddToCard.setCardBackgroundColor(mContext.getColor(R.color.white))
+               }
+           onclickListener.onRecyclerClick(EnumClicks.CELL_ADD_TO_CART_CLICK,position)
        }
     }
 
