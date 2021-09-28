@@ -21,9 +21,11 @@
         <activity android:name=".forgetpasswrd.ForgetPasswordActivity"/>
         <activity android:name=".addtocart.AddToCartActivity"/>
         <activity android:name=".checkout.CheckoutActivity"/>
-        <activity android:name=".itemdetails.ItemDetailsActivity"/>
+        <activity android:name=".insuranceitemdetails.ItemDetailsActivity"/>
         <activity android:name=".myorder.MyOrderActivity"/>
         <activity android:name=".receipt.ReceiptActivity"/>
+        <activity android:name=".itemlist.ItemListActivity"/>
+        <activity android:name=".edititem.EditItemActivity"/>
     </application>
 
 </manifest>

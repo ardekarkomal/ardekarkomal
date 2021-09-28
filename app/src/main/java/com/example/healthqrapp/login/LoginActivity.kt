@@ -9,11 +9,11 @@ import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityNewLoginBinding
 import com.example.healthqrapp.forgetpasswrd.ForgetPasswordActivity
 import com.example.healthqrapp.myorder.MyOrderActivity
-import com.example.healthqrapp.myorder.MyOrderAdapter
 import com.example.healthqrapp.signup.base.SignUPActivity
 
 class LoginActivity : BaseActivity() {
 
+    private var loginType="Admin"
     private lateinit var loginDataBinding: ActivityNewLoginBinding
 
     override fun getLayout() = R.layout.activity_new_login
@@ -45,14 +45,13 @@ class LoginActivity : BaseActivity() {
             startActivity(i)
         }
 
-        loginDataBinding.tvSkipLogin.setOnClickListener {
-            val i = Intent(this, DashbordActivity::class.java)
-            startActivity(i)
+        loginDataBinding.tvSkipLogin.setOnClickListener{
+                val i = Intent(this, DashbordActivity::class.java)
+                i.putExtra(DashbordActivity.LOGIN_TYPE,loginType)
+                startActivity(i)
         }
 
         loginDataBinding.ivGoogle.setOnClickListener {
-          //  val i= Intent(this,MyOrderActivity::class.java)
-          //  startActivity(i)
         }
     }
 

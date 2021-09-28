@@ -116,34 +116,37 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingLeft="@dimen/_12sdp"
-        android:paddingTop="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_12sdp"
-        android:paddingRight="0dp"
-        android:paddingEnd="0dp"
-        android:paddingStart="@dimen/_12sdp">
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/item_details"
-            android:textSize="@dimen/_10sdp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/description"
-            android:textSize="@dimen/_10sdp"
-            android:textColor="@color/black"
-            android:textStyle="bold"
-            android:paddingStart="@dimen/_90sdp"
-            android:paddingLeft="@dimen/_90sdp"
-            tools:ignore="RtlSymmetry" />
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/_12sdp"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingTop="@dimen/_12sdp"
+            android:paddingEnd="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="@dimen/_12sdp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/item_details"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_90sdp"
+                android:paddingLeft="@dimen/_90sdp"
+                android:text="@string/description"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                tools:ignore="RtlSymmetry" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -187,80 +190,11 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:background="@color/divider_color" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/_10sdp"
-        android:paddingStart="@dimen/_12sdp"
-        android:paddingLeft="@dimen/_12sdp"
-        tools:ignore="RtlSymmetry">
-
-        <ImageView
-            android:id="@+id/iv_item_image"
-            android:layout_width="@dimen/_55sdp"
-            android:layout_height="@dimen/_40sdp"
-            android:contentDescription="@string/img_desc"
-            android:scaleType="fitXY"
-            android:src="@drawable/insurance2" />
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_item_details"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Life-individual"
-            android:textSize="@dimen/_8sdp"
-            android:layout_toEndOf="@id/iv_item_image"
-            android:layout_toRightOf="@id/iv_item_image"
-            android:paddingStart="@dimen/_22sdp"
-            android:paddingLeft="@dimen/_22sdp"
-            tools:ignore="RtlSymmetry" />
-        <TextView
-            android:id="@+id/tv_desc"
-            android:layout_width="@dimen/_80sdp"
-            android:layout_height="wrap_content"
-            tools:text="Life-individual sjjhshdjshjshd"
-            android:textSize="@dimen/_8sdp"
-            android:layout_toEndOf="@id/tv_title"
-            android:layout_toRightOf="@id/tv_title"
-            android:paddingStart="@dimen/_20sdp"
-            android:paddingLeft="@dimen/_20sdp"
-            android:singleLine="false"
-            tools:ignore="RtlSymmetry"/>
-        <TextView
-            android:id="@+id/tv_unit_price"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="1000"
-            android:textSize="@dimen/_8sdp"
-            android:layout_toEndOf="@id/tv_desc"
-            android:layout_toRightOf="@id/tv_desc"
-            android:paddingStart="@dimen/_10sdp"
-            android:paddingLeft="@dimen/_10sdp"
-            android:layout_centerHorizontal="true"
-            tools:ignore="RtlSymmetry" />
-
-        <TextView
-            android:id="@+id/tv_quantity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="1"
-            android:textSize="@dimen/_8sdp"
-            android:layout_toEndOf="@id/tv_unit_price"
-            android:layout_toRightOf="@id/tv_unit_price"
-            android:paddingStart="@dimen/_35sdp"
-            android:paddingLeft="@dimen/_35sdp"
-            tools:ignore="RtlSymmetry" />
-
-        <TextView
-            android:id="@+id/tv_total_amount"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="1000"
-            android:textSize="@dimen/_8sdp"
-            android:layout_toEndOf="@id/tv_quantity"
-            android:layout_toRightOf="@id/tv_quantity"
-            android:paddingStart="@dimen/_40sdp"
-            android:paddingLeft="@dimen/_40sdp"           tools:ignore="RtlSymmetry" />
-    </RelativeLayout>
+            android:overScrollMode="never"/>
     </LinearLayout>
     </HorizontalScrollView>
     <com.google.android.material.card.MaterialCardView

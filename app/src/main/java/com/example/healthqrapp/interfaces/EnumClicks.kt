@@ -8,7 +8,9 @@ package com.example.healthqrapp.interfaces
 enum class EnumClicks {
     CELL_CLICK,
     CELL_ADD_TO_CART_CLICK,
-    CELL_MY_ORDER_CLICK
+    CELL_MY_ORDER_CLICK,
+    CELL_EDIT_ITEM_CLICK,
+    CELL_DELETE_ITEM_CLICK
 
 
 }

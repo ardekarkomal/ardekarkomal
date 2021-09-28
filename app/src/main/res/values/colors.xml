@@ -21,4 +21,6 @@
     <color name="lightBlue">#1F51FF</color>
     <color name="divider_color">#F0F0F0</color>
     <color name="dark_green">#4CBB17</color>
+    <color name="orange">#FF4500</color>
+    <color name="yellow">#FFC000</color>
 </resources>

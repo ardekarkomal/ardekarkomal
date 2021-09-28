@@ -1,16 +1,16 @@
 package com.example.healthqrapp.myorder
 
 import android.content.Intent
+import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthqrapp.R
-import com.example.healthqrapp.addtocart.AddToCartActivity
 import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityMyOrderBinding
 import com.example.healthqrapp.interfaces.EnumClicks
 import com.example.healthqrapp.interfaces.OnRecyclerClickListener
-import com.example.healthqrapp.itemdetails.ItemDetailsActivity
+import com.example.healthqrapp.insuranceitemdetails.ItemDetailsActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.MyOrderModel
 import com.example.healthqrapp.signup.base.SignUPActivity
@@ -26,6 +26,7 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
         const val DESCRIPTION="discription"
         const val UNIT_PRICE="unit price"
         const val QUANTITY="quantity"
+        const val LOGIN_TYPE="login type"
     }
     private lateinit var myOrderBinding: ActivityMyOrderBinding
     private var myOrderList=ArrayList<MyOrderModel>()
@@ -51,14 +52,20 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
             startActivity(i)
         }
 
-        myOrderBinding.toolbar.tvMyAddress.setOnClickListener {
-            myOrderList.clear()
-            init()
-        }
-
         myOrderBinding.toolbar.tvHome.setOnClickListener {
             val i = Intent(this, DashbordActivity::class.java)
             startActivity(i)
+        }
+
+        if( intent.getStringExtra(LOGIN_TYPE)== null || intent.getStringExtra(LOGIN_TYPE)=="User") {
+            myOrderBinding.toolbar.tvItem.visibility = View.GONE
+
+        }else{
+            myOrderBinding.toolbar.tvItem.visibility = View.VISIBLE
+            myOrderBinding.toolbar.tvItem.setOnClickListener {
+                val i = Intent(this, DashbordActivity::class.java)
+                startActivity(i)
+            }
         }
     }
 
@@ -93,6 +100,7 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
                 i.putExtra(ItemDetailsActivity.QUANTITY,intent.getStringExtra(QUANTITY))
                 i.putExtra(ItemDetailsActivity.ORDER_ID,myOrderList[position].id)
                 i.putExtra(ItemDetailsActivity.CREATED_DATE,myOrderList[position].createDate)
+                i.putExtra(ItemDetailsActivity.LOGIN_TYPE,intent.getStringExtra(LOGIN_TYPE))
                 startActivity(i)
             }
             else -> {}

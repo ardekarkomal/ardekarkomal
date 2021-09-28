@@ -36,7 +36,7 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_12sdp"
             android:layout_marginTop="@dimen/_15sdp"
-            android:backgroundTint="@color/lightGreen"
+            android:backgroundTint="@color/dark_green"
             tools:targetApi="lollipop" />
 
     </LinearLayout>

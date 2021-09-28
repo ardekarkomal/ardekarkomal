@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingStart="@dimen/_12sdp"
+        android:paddingLeft="@dimen/_12sdp"
+        tools:ignore="RtlSymmetry">
+
+        <ImageView
+            android:id="@+id/iv_item_image"
+            android:layout_width="@dimen/_55sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:contentDescription="@string/img_desc"
+            android:scaleType="fitXY"
+            android:src="@drawable/insurance2" />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Life-individual"
+            android:textSize="@dimen/_8sdp"
+            android:layout_toEndOf="@id/iv_item_image"
+            android:layout_toRightOf="@id/iv_item_image"
+            android:paddingStart="@dimen/_22sdp"
+            android:paddingLeft="@dimen/_22sdp"
+            tools:ignore="RtlSymmetry" />
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="wrap_content"
+            tools:text="Life-individual sjjhshdjshjshd"
+            android:textSize="@dimen/_8sdp"
+            android:layout_toEndOf="@id/tv_title"
+            android:layout_toRightOf="@id/tv_title"
+            android:paddingStart="@dimen/_20sdp"
+            android:paddingLeft="@dimen/_20sdp"
+            android:singleLine="false"
+            tools:ignore="RtlSymmetry"/>
+        <TextView
+            android:id="@+id/tv_unit_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1000"
+            android:textSize="@dimen/_8sdp"
+            android:layout_toEndOf="@id/tv_desc"
+            android:layout_toRightOf="@id/tv_desc"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_10sdp"
+            android:layout_centerHorizontal="true"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1"
+            android:textSize="@dimen/_8sdp"
+            android:layout_toEndOf="@id/tv_unit_price"
+            android:layout_toRightOf="@id/tv_unit_price"
+            android:paddingStart="@dimen/_35sdp"
+            android:paddingLeft="@dimen/_35sdp"
+            tools:ignore="RtlSymmetry" />
+
+        <TextView
+            android:id="@+id/tv_total_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1000"
+            android:textSize="@dimen/_8sdp"
+            android:layout_toEndOf="@id/tv_quantity"
+            android:layout_toRightOf="@id/tv_quantity"
+            android:paddingStart="@dimen/_40sdp"
+            android:paddingLeft="@dimen/_40sdp"           tools:ignore="RtlSymmetry" />
+    </RelativeLayout>
+
+</LinearLayout>
+</layout>

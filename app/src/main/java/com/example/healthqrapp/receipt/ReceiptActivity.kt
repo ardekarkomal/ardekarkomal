@@ -6,7 +6,6 @@ import com.example.healthqrapp.R
 import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityReceiptBinding
-import com.example.healthqrapp.itemdetails.ItemDetailsActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity

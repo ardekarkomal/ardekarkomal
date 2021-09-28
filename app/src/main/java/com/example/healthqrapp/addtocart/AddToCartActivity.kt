@@ -1,7 +1,6 @@
 package com.example.healthqrapp.addtocart
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -13,13 +12,11 @@ import com.example.healthqrapp.checkout.CheckoutActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityAddToCartBinding
 import com.example.healthqrapp.insurancedetails.InsuranceDetailsActivity
-import com.example.healthqrapp.itemdetails.ItemDetailsActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.receipt.ReceiptActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
-import com.example.healthqrapp.utils.Utility
 
 class AddToCartActivity: BaseActivity() {
 
@@ -61,6 +58,11 @@ class AddToCartActivity: BaseActivity() {
 
         addToCartBinding.toolbar.tvMyAddress.setOnClickListener {
             val i = Intent(this, MyOrderActivity::class.java)
+            startActivity(i)
+        }
+
+        addToCartBinding.cvContinueShopping.setOnClickListener {
+            val i = Intent(this, InsuranceDetailsActivity::class.java)
             startActivity(i)
         }
 
