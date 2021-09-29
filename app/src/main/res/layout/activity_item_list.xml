@@ -101,38 +101,16 @@
                             android:textSize="@dimen/_10sdp"
                             android:paddingStart="@dimen/_15sdp"
                             android:paddingLeft="@dimen/_15sdp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:paddingTop="@dimen/_12sdp"
-                        android:visibility="gone"
-                        tools:ignore="RelativeOverlap,RtlSymmetry">
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/quntity"
+                            android:text="@string/action"
                             android:textColor="@color/black"
                             android:textStyle="bold"
                             android:textSize="@dimen/_10sdp"
-                            android:paddingStart="@dimen/_15sdp"
-                            android:paddingLeft="@dimen/_15sdp"
-                            tools:ignore="RtlSymmetry" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/total_without_colon"
-                            android:textColor="@color/black"
-                            android:textStyle="bold"
-                            android:textSize="@dimen/_10sdp"
-                            android:paddingStart="@dimen/_15sdp"
-                            android:paddingLeft="@dimen/_15sdp"
-                            tools:ignore="RtlSymmetry" />
+                            android:paddingStart="@dimen/_70sdp"
+                            android:paddingLeft="@dimen/_70sdp" />
                     </LinearLayout>
                 </RelativeLayout>
                 <View

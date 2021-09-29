@@ -11,6 +11,7 @@
         layout="@layout/dashbord_toolbar" />
 
     <TextView
+        android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/edit_item"
@@ -46,26 +47,14 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_20sdp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/_5sdp">
             <Spinner
                 android:id="@+id/sp_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_50sdp"
-                android:layout_marginRight="@dimen/_20sdp" />
-            <ImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:src="@drawable/ic_down"
-                android:contentDescription="@string/img_desc"
-                android:layout_marginStart="-40dp"
-                android:layout_marginLeft="-40dp" />
+                android:background="@drawable/spinner_background"
+                android:layout_gravity="center_vertical"
+                android:padding="@dimen/_7sdp"/>
 
-        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -87,26 +76,14 @@
         android:layout_marginEnd="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_20sdp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="@dimen/_5sdp">
             <Spinner
                 android:id="@+id/sp_item_type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_50sdp"
-                android:layout_marginRight="@dimen/_20sdp" />
-            <ImageView
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:src="@drawable/ic_down"
-                android:contentDescription="@string/img_desc"
-                android:layout_marginStart="-40dp"
-                android:layout_marginLeft="-40dp" />
+                android:padding="@dimen/_7sdp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/spinner_background"/>
 
-        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -129,14 +106,15 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_20sdp">
        <EditText
-           android:layout_width="wrap_content"
+           android:id="@+id/et_name"
+           android:layout_width="match_parent"
            android:layout_height="wrap_content"
            android:maxLength="20"
            android:textColor="@color/black"
-           android:textSize="@dimen/_8sdp"
+           android:textSize="@dimen/_10sdp"
            android:backgroundTint="@color/transparent"
            tools:targetApi="lollipop" />
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -158,15 +136,16 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_20sdp">
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="20"
             android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp"
+            android:textSize="@dimen/_10sdp"
             android:backgroundTint="@color/transparent"
-            tools:targetApi="lollipop" />
+            tools:targetApi="lollipop"
+            android:importantForAutofill="no" />
     </androidx.cardview.widget.CardView>
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -188,13 +167,15 @@
         android:layout_marginTop="@dimen/_5sdp"
         android:layout_marginRight="@dimen/_20sdp">
         <EditText
-            android:layout_width="wrap_content"
+            android:id="@+id/et_unit_price"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="20"
             android:textColor="@color/black"
-            android:textSize="@dimen/_8sdp"
+            android:textSize="@dimen/_10sdp"
             android:backgroundTint="@color/transparent"
             tools:targetApi="lollipop"
+            android:inputType="number"
             android:importantForAutofill="no" />
     </androidx.cardview.widget.CardView>
 
@@ -203,6 +184,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_choose_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardBackgroundColor="@color/divider_color"
@@ -220,6 +202,7 @@
                 android:padding="@dimen/_5sdp"/>
         </com.google.android.material.card.MaterialCardView>
         <TextView
+            android:id="@+id/tv_no_file"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/no_file_chosen"
@@ -231,6 +214,7 @@
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/iv_item_image"
         android:layout_width="@dimen/_70sdp"
         android:layout_height="@dimen/_70sdp"
         android:src="@drawable/insurance"

@@ -90,16 +90,6 @@
     <string name="choose_file">Choose File</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
-
-    <string-array name="category">
-        <item>Life Insurance</item>
-        <item>Health Insurance</item>
-        <item>Other</item>
-    </string-array>
-
-    <string-array name="itemType">
-        <item>Individual</item>
-        <item>Family Floater</item>
-        <item>Group</item>
-    </string-array>
+    <string name="create">Create</string>
+    <string name="action">Action</string>
 </resources>

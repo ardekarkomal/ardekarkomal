@@ -55,6 +55,11 @@ class ItemListActivity:BaseActivity(),OnRecyclerClickListener {
             val i = Intent(this, MyOrderActivity::class.java)
             startActivity(i)
         }
+
+        itemListBinding.toolbar.tvItem.setOnClickListener {
+            val i = Intent(this,EditItemActivity::class.java)
+            startActivity(i)
+        }
     }
 
     private fun setList(){
@@ -73,6 +78,13 @@ class ItemListActivity:BaseActivity(),OnRecyclerClickListener {
         when(where){
             EnumClicks.CELL_EDIT_ITEM_CLICK->{
                 val i= Intent(this,EditItemActivity::class.java)
+                i.putExtra(EditItemActivity.FROM,"Item List")
+                i.putExtra(EditItemActivity.CATEGORY,"Life Insurance")
+                i.putExtra(EditItemActivity.ITEM_TYPE,"Individual")
+                i.putExtra(EditItemActivity.NAME_TEXT,itemList[position].name)
+                i.putExtra(EditItemActivity.DESCRIPTION,itemList[position].description)
+                i.putExtra(EditItemActivity.UNIT_PRICE,itemList[position].unitPrice)
+                i.putExtra(EditItemActivity.IMAGE,itemList[position].image)
                 startActivity(i)
             }
 

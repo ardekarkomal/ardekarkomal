@@ -8,6 +8,7 @@ import com.example.healthqrapp.R
 import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.base.showMessage
 import com.example.healthqrapp.databinding.ActivityDashbordBinding
+import com.example.healthqrapp.edititem.EditItemActivity
 import com.example.healthqrapp.insurancedetails.InsuranceDetailsActivity
 import com.example.healthqrapp.interfaces.EnumClicks
 import com.example.healthqrapp.interfaces.OnRecyclerClickListener
@@ -63,7 +64,8 @@ class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
         }else{
             dashboardDataBinding.toolbar.tvItem.visibility = View.VISIBLE
             dashboardDataBinding.toolbar.tvItem.setOnClickListener {
-
+                val i = Intent(this,EditItemActivity::class.java)
+                startActivity(i)
             }
         }
   }
