@@ -30,7 +30,7 @@ class LoginActivity : BaseActivity() {
             finishAffinity()
         }
 
-        loginDataBinding.llSignUp.setOnClickListener {
+        loginDataBinding.tvSignup.setOnClickListener {
             val i = Intent(this, SignUPActivity::class.java)
             startActivity(i)
         }

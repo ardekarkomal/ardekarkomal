@@ -228,7 +228,7 @@
                             android:layout_marginRight="@dimen/_2sdp" />
 
                         <TextView
-                            android:id="@+id/tv_getStarted"
+                            android:id="@+id/tv_signup"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:clickable="true"
