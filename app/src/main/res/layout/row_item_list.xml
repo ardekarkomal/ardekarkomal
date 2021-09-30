@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
+        android:id="@+id/rl_rootView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="@dimen/_10sdp"
@@ -46,7 +47,7 @@
             tools:ignore="RtlSymmetry"/>
         <TextView
             android:id="@+id/tv_unit_price"
-            android:layout_width="wrap_content"
+            android:layout_width="@dimen/_40sdp"
             android:layout_height="wrap_content"
             tools:text="1000"
             android:textSize="@dimen/_8sdp"

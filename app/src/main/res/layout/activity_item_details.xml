@@ -32,6 +32,7 @@
         android:paddingLeft="@dimen/_12sdp"
         tools:ignore="RtlSymmetry">
     <TextView
+        android:id="@+id/tv_order_id_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/order_id"
@@ -118,7 +119,7 @@
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingStart="@dimen/_12sdp"
@@ -146,24 +147,17 @@
                 android:textSize="@dimen/_10sdp"
                 android:textStyle="bold"
                 tools:ignore="RtlSymmetry" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:paddingTop="@dimen/_12sdp"
-            tools:ignore="RelativeOverlap,RtlSymmetry">
+
         <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingStart="@dimen/_12sdp"
+                android:paddingLeft="@dimen/_12sdp"
                 android:text="@string/unitprice"
                 android:textColor="@color/black"
                 android:textStyle="bold"
-                android:textSize="@dimen/_10sdp"
-                />
-            <TextView
+                android:textSize="@dimen/_10sdp"/>
+        <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/quntity"

@@ -49,22 +49,17 @@ class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
                 startActivity(i)
             }
 
-            dashboardDataBinding.toolbar.tvHome.setOnClickListener {
-                mDashBordList.clear()
-                init()
-            }
-
             dashboardDataBinding.toolbar.tvMyAddress.setOnClickListener {
                 val i = Intent(this, MyOrderActivity::class.java)
                 startActivity(i)
             }
 
-        if( intent.getStringExtra(LOGIN_TYPE)== null || intent.getStringExtra(LOGIN_TYPE)=="User") {
+        if(LoginActivity.loginType=="User") {
             dashboardDataBinding.toolbar.tvItem.visibility = View.GONE
         }else{
             dashboardDataBinding.toolbar.tvItem.visibility = View.VISIBLE
             dashboardDataBinding.toolbar.tvItem.setOnClickListener {
-                val i = Intent(this,EditItemActivity::class.java)
+                val i = Intent(this,ItemListActivity::class.java)
                 startActivity(i)
             }
         }
@@ -89,7 +84,7 @@ class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
              if(position==0) {
                  Constant.SELECTED_ITEM_COUNT = (Constant.SELECTED_ITEM_COUNT.toInt() + 1).toString()
                  dashboardDataBinding.toolbar.tvItemCount.text = Constant.SELECTED_ITEM_COUNT
-                 if( intent.getStringExtra(LOGIN_TYPE)== null || intent.getStringExtra(LOGIN_TYPE)=="User") {
+                 if( LoginActivity.loginType=="User") {
                      val i = Intent(this, InsuranceDetailsActivity::class.java)
                      startActivity(i)
                  }else{

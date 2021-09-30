@@ -1,4 +1,4 @@
-package com.example.healthqrapp.insuranceitemdetails
+package com.example.healthqrapp.orderitemdetails
 
 import android.content.Intent
 import android.view.View
@@ -7,13 +7,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthqrapp.R
 import com.example.healthqrapp.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
-import com.example.healthqrapp.databinding.ActivityItemDetailsBinding
+import com.example.healthqrapp.databinding.ActivityOrderDetailsBinding
+import com.example.healthqrapp.itemlist.ItemListActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.ItemDetailsModel
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 
-class ItemDetailsActivity : BaseActivity() {
+class OrderDetailsActivity : BaseActivity() {
 
     companion object{
         const val FROM="from"
@@ -26,13 +27,11 @@ class ItemDetailsActivity : BaseActivity() {
         const val UNIT_PRICE="unit price"
         const val QUANTITY="quantity"
         const val LOGIN_TYPE="login type"
-
     }
-    private lateinit var itemDetailsDataBinding : ActivityItemDetailsBinding
+    private lateinit var itemDetailsDataBinding : ActivityOrderDetailsBinding
     private var itemList=ArrayList<ItemDetailsModel>()
-    private lateinit var mAdapter: ItemDeailsAdapter
-
-    override fun getLayout()= R.layout.activity_item_details
+    private lateinit var mAdapter: OrderDeailsAdapter
+    override fun getLayout()= R.layout.activity_order_details
 
     override fun init() {
         itemDetailsDataBinding = DataBindingUtil.setContentView(this,getLayout())
@@ -56,12 +55,13 @@ class ItemDetailsActivity : BaseActivity() {
             startActivity(i)
         }
 
-        if( intent.getStringExtra(LOGIN_TYPE)== null || intent.getStringExtra(LOGIN_TYPE)=="User") {
+        if(LoginActivity.loginType=="User") {
            itemDetailsDataBinding.toolbar.tvItem.visibility = View.GONE
         }else{
             itemDetailsDataBinding.toolbar.tvItem.visibility = View.VISIBLE
             itemDetailsDataBinding.toolbar.tvItem.setOnClickListener {
-
+                val i = Intent(this, ItemListActivity::class.java)
+                startActivity(i)
             }
 
         }
@@ -95,7 +95,7 @@ class ItemDetailsActivity : BaseActivity() {
     }
 
     private fun setAdapter(){
-        mAdapter = ItemDeailsAdapter(itemList)
+        mAdapter = OrderDeailsAdapter(itemList)
         itemDetailsDataBinding.rvItemDetails.layoutManager = LinearLayoutManager(this)
         itemDetailsDataBinding.rvItemDetails.adapter = mAdapter
     }

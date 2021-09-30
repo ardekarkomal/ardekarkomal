@@ -13,7 +13,9 @@ import com.example.healthqrapp.signup.base.SignUPActivity
 
 class LoginActivity : BaseActivity() {
 
-    private var loginType="Admin"
+    companion object {
+        var loginType = "Admin"
+    }
     private lateinit var loginDataBinding: ActivityNewLoginBinding
 
     override fun getLayout() = R.layout.activity_new_login

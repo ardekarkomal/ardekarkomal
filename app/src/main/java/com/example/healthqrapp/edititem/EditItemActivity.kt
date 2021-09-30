@@ -83,14 +83,31 @@ class EditItemActivity :BaseActivity() {
 
         editItemBinding.cvSave.setOnClickListener {
             if (validation()) {
-                showMessage(this,"Create new item successfully!!")
-                val i = Intent(this, ItemListActivity::class.java)
-                startActivity(i)
+                if (intent.getStringExtra(FROM) == "Item List") {
+                    showMessage(this, "Edit item successfully!!")
+                    val i = Intent(this, ItemListActivity::class.java)
+                    startActivity(i)
+                }else{
+                    showMessage(this, "Create new item successfully!!")
+                    val i = Intent(this, ItemListActivity::class.java)
+                    i.putExtra(ItemListActivity.FROM,"Edit Activity")
+                    i.putExtra(ItemListActivity.ID,"3")
+                    i.putExtra(ItemListActivity.NAME_TEXT,editItemBinding.etName.text.toString())
+                    i.putExtra(ItemListActivity.DESCRIPTION,editItemBinding.etDescription.text.toString())
+                    i.putExtra(ItemListActivity.UNITPRICE,editItemBinding.etUnitPrice.text.toString())
+                    i.putExtra(ItemListActivity.IMAGEURL,editItemBinding.ivItemImage.drawable.toString())
+                    startActivity(i)
+                }
             }
         }
 
         editItemBinding.cvCancel.setOnClickListener {
             onBackPressed()
+        }
+
+        editItemBinding.toolbar.tvItem.setOnClickListener {
+            val i = Intent(this,ItemListActivity::class.java)
+            startActivity(i)
         }
 
         editItemBinding.cvChooseImage.setOnClickListener {
@@ -128,9 +145,6 @@ class EditItemActivity :BaseActivity() {
         editItemBinding.etDescription.setText(intent.getStringExtra(DESCRIPTION))
         editItemBinding.etUnitPrice.setText(intent.getStringExtra(UNIT_PRICE))
         editItemBinding.ivItemImage.setImageResource(intent.getIntExtra(IMAGE, 0))
-        val mList = ArrayList<ItemListModel>()
-        mList.add(ItemListModel("3",editItemBinding.etName.text.toString(),
-            editItemBinding.etDescription.text.toString(),editItemBinding.etUnitPrice.text.toString(),R.drawable.insurance))
     }
 
     private fun validation(): Boolean {

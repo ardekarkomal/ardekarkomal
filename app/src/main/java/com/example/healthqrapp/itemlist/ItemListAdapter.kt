@@ -38,6 +38,10 @@ class ItemListAdapter(var mList:ArrayList<ItemListModel>,var onClickListener:OnR
         binding.cvDelete.setOnClickListener {
             onClickListener.onRecyclerClick(EnumClicks.CELL_DELETE_ITEM_CLICK,position)
         }
+
+        binding.rlRootView.setOnClickListener {
+            onClickListener.onRecyclerClick(EnumClicks.CELL_ITEM_CLICK,position)
+        }
     }
 
     override fun getItemCount()= mList.size

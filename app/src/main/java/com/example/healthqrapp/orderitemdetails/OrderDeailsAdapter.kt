@@ -1,4 +1,4 @@
-package com.example.healthqrapp.insuranceitemdetails
+package com.example.healthqrapp.orderitemdetails
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import com.example.healthqrapp.R
 import com.example.healthqrapp.databinding.RowItemDetailsBinding
 import com.example.healthqrapp.model.ItemDetailsModel
 
-class ItemDeailsAdapter(var mList:ArrayList<ItemDetailsModel>):RecyclerView.Adapter<ItemDeailsAdapter.ViewHolder>() {
+class OrderDeailsAdapter(var mList:ArrayList<ItemDetailsModel>):RecyclerView.Adapter<OrderDeailsAdapter.ViewHolder>() {
 
     private lateinit var mContext:Context
     private lateinit var binding:RowItemDetailsBinding

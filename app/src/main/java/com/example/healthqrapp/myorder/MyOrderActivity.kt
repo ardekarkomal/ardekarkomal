@@ -10,9 +10,11 @@ import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityMyOrderBinding
 import com.example.healthqrapp.interfaces.EnumClicks
 import com.example.healthqrapp.interfaces.OnRecyclerClickListener
-import com.example.healthqrapp.insuranceitemdetails.ItemDetailsActivity
+import com.example.healthqrapp.orderitemdetails.ItemDetailActivity
+import com.example.healthqrapp.itemlist.ItemListActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.MyOrderModel
+import com.example.healthqrapp.orderitemdetails.OrderDetailsActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 import com.example.healthqrapp.utils.Constant
 
@@ -57,13 +59,13 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
             startActivity(i)
         }
 
-        if( intent.getStringExtra(LOGIN_TYPE)== null || intent.getStringExtra(LOGIN_TYPE)=="User") {
+        if(LoginActivity.loginType=="User") {
             myOrderBinding.toolbar.tvItem.visibility = View.GONE
 
         }else{
             myOrderBinding.toolbar.tvItem.visibility = View.VISIBLE
             myOrderBinding.toolbar.tvItem.setOnClickListener {
-                val i = Intent(this, DashbordActivity::class.java)
+                val i = Intent(this, ItemListActivity::class.java)
                 startActivity(i)
             }
         }
@@ -90,17 +92,17 @@ class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
     override fun onRecyclerClick(where: EnumClicks, position: Int) {
         when(where){
             EnumClicks.CELL_MY_ORDER_CLICK ->{
-                val i = Intent(this,ItemDetailsActivity::class.java)
-                i.putExtra(ItemDetailsActivity.FROM, intent.getStringExtra(FROM))
-                i.putExtra(ItemDetailsActivity.TITLE,intent.getStringExtra(TITLE))
-                i.putExtra(ItemDetailsActivity.DESCRIPTION,intent.getStringExtra(DESCRIPTION))
-                i.putExtra(ItemDetailsActivity.ITEM_IMAGE,intent.getStringExtra(ITEM_IMAGE))
-                i.putExtra(ItemDetailsActivity.UNIT_PRICE,intent.getStringExtra(UNIT_PRICE))
-                i.putExtra(ItemDetailsActivity.TOTAL_AMOUNT,intent.getStringExtra(TOTAL_AMOUNT))
-                i.putExtra(ItemDetailsActivity.QUANTITY,intent.getStringExtra(QUANTITY))
-                i.putExtra(ItemDetailsActivity.ORDER_ID,myOrderList[position].id)
-                i.putExtra(ItemDetailsActivity.CREATED_DATE,myOrderList[position].createDate)
-                i.putExtra(ItemDetailsActivity.LOGIN_TYPE,intent.getStringExtra(LOGIN_TYPE))
+                val i = Intent(this,OrderDetailsActivity::class.java)
+                i.putExtra(OrderDetailsActivity.FROM, intent.getStringExtra(FROM))
+                i.putExtra(OrderDetailsActivity.TITLE,intent.getStringExtra(TITLE))
+                i.putExtra(OrderDetailsActivity.DESCRIPTION,intent.getStringExtra(DESCRIPTION))
+                i.putExtra(OrderDetailsActivity.ITEM_IMAGE,intent.getStringExtra(ITEM_IMAGE))
+                i.putExtra(OrderDetailsActivity.UNIT_PRICE,intent.getStringExtra(UNIT_PRICE))
+                i.putExtra(OrderDetailsActivity.TOTAL_AMOUNT,intent.getStringExtra(TOTAL_AMOUNT))
+                i.putExtra(OrderDetailsActivity.QUANTITY,intent.getStringExtra(QUANTITY))
+                i.putExtra(OrderDetailsActivity.ORDER_ID,myOrderList[position].id)
+                i.putExtra(OrderDetailsActivity.CREATED_DATE,myOrderList[position].createDate)
+                i.putExtra(OrderDetailsActivity.LOGIN_TYPE,intent.getStringExtra(LOGIN_TYPE))
                 startActivity(i)
             }
             else -> {}

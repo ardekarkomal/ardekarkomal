@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -41,8 +40,10 @@
             android:layout_toRightOf="@id/tv_title"
             android:paddingStart="@dimen/_20sdp"
             android:paddingLeft="@dimen/_20sdp"
+            android:paddingEnd="@dimen/_5sdp"
             android:singleLine="false"
-            tools:ignore="RtlSymmetry"/>
+            tools:ignore="RtlSymmetry"
+            android:paddingRight="@dimen/_5sdp" />
         <TextView
             android:id="@+id/tv_unit_price"
             android:layout_width="wrap_content"
@@ -51,10 +52,11 @@
             android:textSize="@dimen/_8sdp"
             android:layout_toEndOf="@id/tv_desc"
             android:layout_toRightOf="@id/tv_desc"
+            android:gravity="center_horizontal"
             android:paddingStart="@dimen/_10sdp"
-            android:paddingLeft="@dimen/_10sdp"
             android:layout_centerHorizontal="true"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry"
+            android:paddingLeft="@dimen/_10sdp" />
 
         <TextView
             android:id="@+id/tv_quantity"
