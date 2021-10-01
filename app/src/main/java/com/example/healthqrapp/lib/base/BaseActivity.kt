@@ -1,4 +1,4 @@
-package com.example.healthqrapp.base
+package com.example.healthqrapp.lib.base
 
 import android.content.Context
 import android.os.Bundle

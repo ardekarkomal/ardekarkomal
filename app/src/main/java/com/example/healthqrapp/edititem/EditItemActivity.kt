@@ -5,19 +5,16 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
 import android.view.View
-import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.view.isGone
-import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityEditItemBinding
 import com.example.healthqrapp.itemlist.ItemListActivity
 import com.example.healthqrapp.login.LoginActivity
-import com.example.healthqrapp.model.ItemListModel
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
 

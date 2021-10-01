@@ -1,4 +1,4 @@
-package com.example.healthqrapp.interfaces
+package com.example.healthqrapp.lib.interfaces
 
 /**
  * EnumClicks is used to assign constants to identify various click events in RecyclerView.

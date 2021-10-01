@@ -9,10 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthqrapp.R
 import com.example.healthqrapp.databinding.RowInsuranceDetailsBinding
-import com.example.healthqrapp.interfaces.EnumClicks
-import com.example.healthqrapp.interfaces.OnRecyclerClickListener
+import com.example.healthqrapp.lib.interfaces.EnumClicks
+import com.example.healthqrapp.lib.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.model.InsuranceDetailsModel
-import java.text.FieldPosition
 
 class InsuranceDetailsAdapter(var mList:ArrayList<InsuranceDetailsModel>,var onclickListener:OnRecyclerClickListener) :RecyclerView.Adapter<InsuranceDetailsAdapter.ViewHolder>(){
 

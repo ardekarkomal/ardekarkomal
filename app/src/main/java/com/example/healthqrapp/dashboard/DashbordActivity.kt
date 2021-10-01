@@ -5,20 +5,18 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.databinding.ActivityDashbordBinding
-import com.example.healthqrapp.edititem.EditItemActivity
 import com.example.healthqrapp.insurancedetails.InsuranceDetailsActivity
-import com.example.healthqrapp.interfaces.EnumClicks
-import com.example.healthqrapp.interfaces.OnRecyclerClickListener
+import com.example.healthqrapp.lib.interfaces.EnumClicks
+import com.example.healthqrapp.lib.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.itemlist.ItemListActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.DashbordModel
-import com.example.healthqrapp.model.MyOrderModel
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
-import com.example.healthqrapp.utils.Constant
+import com.example.healthqrapp.lib.utils.Constant
 
 class DashbordActivity : BaseActivity(),OnRecyclerClickListener{
 

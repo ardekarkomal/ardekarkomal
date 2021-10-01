@@ -1,16 +1,12 @@
 package com.example.healthqrapp.signup.base
 
 import android.content.Intent
-import android.widget.RadioGroup
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.databinding.ActivitySignupBinding
 import com.example.healthqrapp.login.LoginActivity
-import com.example.healthqrapp.utils.Constant
-import java.util.*
-import kotlin.math.sign
 
 
 class SignUPActivity :BaseActivity(){

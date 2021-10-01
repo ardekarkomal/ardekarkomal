@@ -2,14 +2,13 @@ package com.example.healthqrapp.itemlist
 
 import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.healthqrapp.R
 import com.example.healthqrapp.databinding.RowItemListBinding
-import com.example.healthqrapp.interfaces.EnumClicks
-import com.example.healthqrapp.interfaces.OnRecyclerClickListener
+import com.example.healthqrapp.lib.interfaces.EnumClicks
+import com.example.healthqrapp.lib.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.model.ItemListModel
 
 class ItemListAdapter(var mList:ArrayList<ItemListModel>,var onClickListener:OnRecyclerClickListener) : RecyclerView.Adapter<ItemListAdapter.ViewHolder>() {

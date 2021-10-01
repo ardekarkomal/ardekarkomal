@@ -1,7 +1,4 @@
-package com.example.healthqrapp.interfaces
-
-import android.view.View
-import com.example.healthqrapp.interfaces.EnumClicks
+package com.example.healthqrapp.lib.interfaces
 
 /**
  * OnRecyclerClickListener is used to determine click events in RecyclerView.

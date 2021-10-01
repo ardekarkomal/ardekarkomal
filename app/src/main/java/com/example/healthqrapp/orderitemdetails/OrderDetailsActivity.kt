@@ -5,7 +5,7 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
+import com.example.healthqrapp.lib.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityOrderDetailsBinding
 import com.example.healthqrapp.itemlist.ItemListActivity

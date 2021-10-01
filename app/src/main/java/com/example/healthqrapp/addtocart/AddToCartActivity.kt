@@ -6,8 +6,8 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.checkout.CheckoutActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityAddToCartBinding
@@ -16,7 +16,7 @@ import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.receipt.ReceiptActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
-import com.example.healthqrapp.utils.Constant
+import com.example.healthqrapp.lib.utils.Constant
 
 class AddToCartActivity: BaseActivity() {
 
@@ -151,6 +151,5 @@ class AddToCartActivity: BaseActivity() {
         }else {
             addToCartBinding.btnCheckout.text = getString(R.string.checkout)
         }
-
     }
 }

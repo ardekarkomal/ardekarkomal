@@ -2,23 +2,22 @@ package com.example.healthqrapp.itemlist
 
 import android.content.Intent
 import android.view.View
-import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityItemListBinding
 import com.example.healthqrapp.edititem.EditItemActivity
-import com.example.healthqrapp.interfaces.EnumClicks
-import com.example.healthqrapp.interfaces.OnRecyclerClickListener
+import com.example.healthqrapp.lib.interfaces.EnumClicks
+import com.example.healthqrapp.lib.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.ItemListModel
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.orderitemdetails.ItemDetailActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
-import com.example.healthqrapp.utils.Constant
+import com.example.healthqrapp.lib.utils.Constant
 
 class ItemListActivity:BaseActivity(),OnRecyclerClickListener {
 

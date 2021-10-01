@@ -1,15 +1,14 @@
 package com.example.healthqrapp.insurancedetails
 
 import android.content.Intent
-import android.widget.ImageView
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.healthqrapp.R
 import com.example.healthqrapp.addtocart.AddToCartActivity
-import com.example.healthqrapp.base.BaseActivity
+import com.example.healthqrapp.lib.base.BaseActivity
 import com.example.healthqrapp.databinding.ActivityInsuranceDetailsBinding
-import com.example.healthqrapp.interfaces.EnumClicks
-import com.example.healthqrapp.interfaces.OnRecyclerClickListener
+import com.example.healthqrapp.lib.interfaces.EnumClicks
+import com.example.healthqrapp.lib.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.model.InsuranceDetailsModel
 
 class InsuranceDetailsActivity: BaseActivity(),OnRecyclerClickListener {

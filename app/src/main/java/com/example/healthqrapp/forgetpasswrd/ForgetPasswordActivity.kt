@@ -1,11 +1,10 @@
 package com.example.healthqrapp.forgetpasswrd
 
-import android.content.Intent
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.databinding.ActivityForgetPasswordBinding
 
 class ForgetPasswordActivity : BaseActivity() {

@@ -5,18 +5,17 @@ import android.view.View
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.healthqrapp.R
-import com.example.healthqrapp.base.BaseActivity
+import com.example.healthqrapp.lib.base.BaseActivity
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityMyOrderBinding
-import com.example.healthqrapp.interfaces.EnumClicks
-import com.example.healthqrapp.interfaces.OnRecyclerClickListener
-import com.example.healthqrapp.orderitemdetails.ItemDetailActivity
+import com.example.healthqrapp.lib.interfaces.EnumClicks
+import com.example.healthqrapp.lib.interfaces.OnRecyclerClickListener
 import com.example.healthqrapp.itemlist.ItemListActivity
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.model.MyOrderModel
 import com.example.healthqrapp.orderitemdetails.OrderDetailsActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
-import com.example.healthqrapp.utils.Constant
+import com.example.healthqrapp.lib.utils.Constant
 
 class MyOrderActivity: BaseActivity(),OnRecyclerClickListener {
 

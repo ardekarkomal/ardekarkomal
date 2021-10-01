@@ -1,7 +1,6 @@
-package com.example.healthqrapp.utils
+package com.example.healthqrapp.lib.utils
 
-import com.example.healthqrapp.model.InsuranceDetailsModel
-import com.google.gson.Gson
+import com.example.healthqrapp.BuildConfig
 
 object Constant {
 
@@ -12,6 +11,12 @@ object Constant {
     const val PREF_ADDTOCART_DATA = "UserData"
     var CART_TITLE="CartTitle"
 
+    var BASE_URL ="" /*when (BuildConfig.BUILD_TYPE) {
+        "debug" -> DEV_BASE_URL
+        "preprod" -> PRE_PROD_BASE_URL
+        "staging" -> STAG_BASE_URL
+        else -> PROD_BASE_URL
+    }*/
 
     /**
      * @return All user data.

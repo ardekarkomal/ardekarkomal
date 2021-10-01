@@ -4,14 +4,14 @@ import android.content.Intent
 import androidx.databinding.DataBindingUtil
 import com.example.healthqrapp.R
 import com.example.healthqrapp.addtocart.AddToCartActivity
-import com.example.healthqrapp.base.BaseActivity
-import com.example.healthqrapp.base.showMessage
+import com.example.healthqrapp.lib.base.BaseActivity
+import com.example.healthqrapp.lib.base.showMessage
 import com.example.healthqrapp.dashboard.DashbordActivity
 import com.example.healthqrapp.databinding.ActivityCheckoutBinding
 import com.example.healthqrapp.login.LoginActivity
 import com.example.healthqrapp.myorder.MyOrderActivity
 import com.example.healthqrapp.signup.base.SignUPActivity
-import com.example.healthqrapp.utils.Constant
+import com.example.healthqrapp.lib.utils.Constant
 
 class CheckoutActivity : BaseActivity() {
 
